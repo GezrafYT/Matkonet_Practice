@@ -1,5 +1,3 @@
-package MatkonetPractice;
-
 public class arrayPractice {
 
 
