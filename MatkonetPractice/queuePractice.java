@@ -16,12 +16,12 @@ public class queuePractice {
         {
             count++;
 
-            temp.add(q.remove());
+            temp.insert(q.remove());
         }
 
         while(!temp.isEmpty())
         {
-            q.add(temp.remove());
+            q.insert(temp.remove());
         }
 
         return count;
@@ -38,7 +38,7 @@ public class queuePractice {
         {
             x = q.remove();
             sum += x;
-            q.add(x);
+            q.insert(x);
         }
 
         return sum;
@@ -59,7 +59,7 @@ public class queuePractice {
                 flag = true;
             }
 
-            q.add(m);
+            q.insert(m);
         }
 
         return flag;
@@ -80,7 +80,7 @@ public class queuePractice {
                 count++;
             }
 
-            q.add(x);
+            q.insert(x);
         }
 
         return count;
@@ -109,12 +109,12 @@ public class queuePractice {
         {
             count++;
 
-            temp.add(q.remove());
+            temp.insert(q.remove());
         }
 
         while(!temp.isEmpty())
         {
-            q.add(temp.remove());
+            q.insert(temp.remove());
         }
 
         return count;
@@ -135,7 +135,7 @@ public class queuePractice {
                 count++;
             }
 
-            q.add(x);
+            q.insert(x);
         }
 
         return count;
@@ -153,10 +153,10 @@ public class queuePractice {
 
             if(x < 0)
             {
-                temp.add(x);
+                temp.insert(x);
             }
 
-            q.add(x);
+            q.insert(x);
         }
 
         return temp;
@@ -174,11 +174,11 @@ public class queuePractice {
             y = q.remove();
             if(y > x && flag)
             {
-                q.add(x);
+                q.insert(x);
                 flag = false;
             }
 
-            q.add(y);
+            q.insert(y);
         }
     }
 
@@ -197,10 +197,10 @@ public class queuePractice {
 
             if(x % 2 != 0)
             {
-                temp1.add(x);
+                temp1.insert(x);
             }
 
-            q1.add(x);
+            q1.insert(x);
         }
 
         for(int j = 0; j<size2; j++)
@@ -209,20 +209,20 @@ public class queuePractice {
 
             if(x % 2 == 0)
             {
-                temp2.add(x);
+                temp2.insert(x);
             }
 
-            q2.add(x);
+            q2.insert(x);
         }
 
         while(!temp1.isEmpty())
         {
-            new_queue.add(temp1.remove());
+            new_queue.insert(temp1.remove());
         }
 
         while(!temp2.isEmpty())
         {
-            new_queue.add(temp2.remove());
+            new_queue.insert(temp2.remove());
         }
 
         return new_queue;
@@ -238,14 +238,14 @@ public class queuePractice {
         for(int i = 0; i<size - 1; i++)
         {
             x = q.remove();
-            temp.add(x);
+            temp.insert(x);
         }
 
         y = q.remove();
 
         while(!temp.isEmpty())
         {
-            q.add(temp.remove());
+            q.insert(temp.remove());
         }
 
         return y;
@@ -259,12 +259,12 @@ public class queuePractice {
         for(int i = 0; i<size; i++)
         {
             x = lastRemove(q);
-            temp.add(x);
+            temp.insert(x);
         }
 
         while(!temp.isEmpty())
         {
-            q.add(temp.remove());
+            q.insert(temp.remove());
         }
 
         return q;
@@ -280,19 +280,19 @@ public class queuePractice {
         {
             for(int i = 0; i<size / 2; i++)
             {
-                temp.add(q.remove());
+                temp.insert(q.remove());
             }
 
             q.remove();
 
             while(!q.isEmpty())
             {
-                temp.add(q.remove());
+                temp.insert(q.remove());
             }
 
             while(!temp.isEmpty())
             {
-                q.add(temp.remove());
+                q.insert(temp.remove());
             }
         }
 
@@ -301,7 +301,7 @@ public class queuePractice {
         {
             for(int j = 0; j<(size / 2) - 1; j++)
             {
-                temp.add(q.remove());
+                temp.insert(q.remove());
             }
 
             if(sizeDouble(q) > 2)
@@ -312,12 +312,12 @@ public class queuePractice {
 
             while(!q.isEmpty())
             {
-                temp.add(q.remove());
+                temp.insert(q.remove());
             }
 
             while(!temp.isEmpty())
             {
-                q.add(temp.remove());
+                q.insert(temp.remove());
             }
         }
 
@@ -329,7 +329,7 @@ public class queuePractice {
 
         for(int i = 0; i<arr.length; i++)
         {
-            q.add(arr[i]);
+            q.insert(arr[i]);
         }
 
         return q;
@@ -378,7 +378,7 @@ public class queuePractice {
             for (int i = 0; i < size; i++) {
                 x = q.remove();
                 System.out.print(" | " + x);
-                q.add(x);
+                q.insert(x);
             }
             System.out.print(" | ");
         }
