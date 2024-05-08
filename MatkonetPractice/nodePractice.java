@@ -143,7 +143,7 @@ public class nodePractice {
 
         if (n.getValue() % 2 != 0)
         {
-            q.add(n.getValue());
+            q.insert(n.getValue());
         }
 
         return megaChain(n.getNext(), q);
