@@ -1,3 +1,5 @@
+package MatkonetPractice;
+
 public class Node<T>
 {
     private T info;

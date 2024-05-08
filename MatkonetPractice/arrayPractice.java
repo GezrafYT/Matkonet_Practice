@@ -1,3 +1,5 @@
+package MatkonetPractice;
+
 public class arrayPractice {
 
 
@@ -148,29 +150,19 @@ public class arrayPractice {
 
     public static int smallestNumIndex(int[] arr)
     {
+        int minIndex = 0;
         int min = arr[0];
-        int smallestNum = 0;
-        int savedIndex = 0;
 
         for(int i = 0; i<arr.length; i++)
         {
-            if(arr[i] < min)
+            if (arr[i] < min)
             {
                 min = arr[i];
+                minIndex = i;
             }
         }
 
-        for(int j = 0; j<arr.length; j++)
-        {
-            if(arr[j] == min)
-            {
-                savedIndex = j;
-            }
-
-        }
-
-        return savedIndex;
-
+        return minIndex;
     }
 
     public static int sumBiggestNums(int[] arr)
