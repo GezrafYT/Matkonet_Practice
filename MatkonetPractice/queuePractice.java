@@ -28,6 +28,77 @@ public class queuePractice {
 
     }
 
+    public static int sum(Queue<Integer> q)
+    {
+        int sum = 0;
+        int x = 0;
+        int size = size(q);
+
+        for(int i = 0; i<size; i++)
+        {
+            x = q.remove();
+            sum += x;
+            q.add(x);
+        }
+
+        return sum;
+    }
+
+    public static boolean isExist(Queue<Integer> q, int x)
+    {
+        int m = 0;
+        boolean flag = false;
+        int size = size(q);
+
+        for(int i = 0; i<size; i++)
+        {
+            m = q.remove();
+
+            if (m == x)
+            {
+                flag = true;
+            }
+
+            q.add(m);
+        }
+
+        return flag;
+    }
+
+    public static int kInQue(Queue<Integer> q, int k)
+    {
+        int count = 0;
+        int x = 0;
+        int size = size(q);
+
+        for(int i = 0; i<size; i++)
+        {
+            x = q.remove();
+
+            if (x == k)
+            {
+                count++;
+            }
+
+            q.add(x);
+        }
+
+        return count;
+    }
+
+    public static void printNumAndCount(Queue<Integer> q)
+    {
+        int size = size(q);
+        int x = 0;
+
+        for(int i = 0; i<size; i++)
+        {
+            x = q.remove();
+
+            System.out.println("Num:" + x + " Count: " + kInQue(q, x));
+        }
+    }
+
     public static int sizeDouble(Queue<Double> q) //פונקציה שמחזירה גודל של תור
     {
         int count = 0;
@@ -47,20 +118,61 @@ public class queuePractice {
         }
 
         return count;
+    }
 
+    public static int divisibleCount(Queue<Integer> q)
+    {
+        int x = 0;
+        int count = 0;
+        int size = size(q);
+
+        for(int i = 0; i<size; i++)
+        {
+            x = q.remove();
+
+            if(x % 5 == 0 || x % 7 == 0)
+            {
+                count++;
+            }
+
+            q.add(x);
+        }
+
+        return count;
+    }
+
+    public static Queue<Integer> negativeQue(Queue<Integer> q)
+    {
+        Queue<Integer> temp = new LinkedList<Integer>();
+        int size = size(q);
+        int x = 0;
+
+        for(int i = 0; i<size; i++)
+        {
+            x = q.remove();
+
+            if(x < 0)
+            {
+                temp.add(x);
+            }
+
+            q.add(x);
+        }
+
+        return temp;
     }
     public static void addNumber(Queue<Integer> q, int x) //פונקציה שמקבלת תור ממוין ומכניסה את הפרמטר איקס למיקום הסידורי שלו בתור
     {
         Queue<Integer> temp = new LinkedList<Integer>();
         int size = size(q);
-        int y = 0;
+        int y;
         boolean flag = true;
 
 
         for(int i = 0; i<size; i++)
         {
             y = q.remove();
-            if(flag && y < x)
+            if(y > x && flag)
             {
                 q.add(x);
                 flag = false;
@@ -211,6 +323,18 @@ public class queuePractice {
 
     }
 
+    public static Queue<Integer> arrToQueue(int[] arr)
+    {
+        Queue<Integer> q = new LinkedList<Integer>();
+
+        for(int i = 0; i<arr.length; i++)
+        {
+            q.add(arr[i]);
+        }
+
+        return q;
+    }
+
     public static double totalMoney(Queue<BankAccount> qb)
     {
         double sum = 0;
@@ -243,4 +367,35 @@ public class queuePractice {
 
         return targetName;
     }
+
+    //--------------------------------------------------
+    public static void printIntQueue(Queue<Integer> q) //פונקציה שמדפיסה תור בצורה יפה
+    {
+        int x = 0;
+        int size = size(q);
+
+        if(size > 0) {
+            for (int i = 0; i < size; i++) {
+                x = q.remove();
+                System.out.print(" | " + x);
+                q.add(x);
+            }
+            System.out.print(" | ");
+        }
+
+    }
+
+    public static void main(String[] args)
+    {
+        int[] arr = { -5, -1, 2, 5, 6, 7, 8};
+        Queue<Integer> q = arrToQueue(arr);
+
+//        reverseQueue(q);
+//        addNumber(q, 3);
+
+        printIntQueue(q);
+        System.out.println();
+        printIntQueue(negativeQue(q));
+    }
+
 }
